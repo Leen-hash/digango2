@@ -1,38 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-# Task 1 + Task 2 + Task 4 + Task 5
+# عرض الصفحة الرئيسية
 def index(request):
-    # parameter from query string
-    name = request.GET.get("name") or "world!"
-    # render template and pass context
-    return render(request, "bookmodule/index.html", {"name": name})
+    return render(request, "bookmodule/index.html")
 
-# Task 3: path parameter view
-#def index2(request, val1="0"):
-  #  try:
-     #   n = int(val1)
-     #   context = {"val1": n, "error": None}
-   # except ValueError:
-    #    context = {"val1": None, "error": f"⚠️ error'{val1}' , expected val1 to be integer "}
-    
-   # return render(request, "bookmodule/index2.html", context)
+# عرض قائمة الكتب
+def list_books(request):
+    return render(request, "bookmodule/list_books.html")
 
-
-def index2(request, val1=0): 
-    return HttpResponse("value1 = " + str(val1))
-
-# Task 7: view single book details
+# عرض تفاصيل كتاب واحد (مثلاً لما المستخدم يختار كتاب)
 def viewbook(request, bookId):
-    # sample "database" (hard-coded as required by the lab)
-    book1 = {'id': 123, 'title': 'Continuous Delivery', 'author': 'J. Humble and D. Farley'}
-    book2 = {'id': 456, 'title': 'Secrets of Reverse Engineering', 'author': 'E. Eilam'}
+    return render(request, "bookmodule/one_book.html")
 
-    targetBook = None
-    if book1['id'] == bookId:
-        targetBook = book1
-    if book2['id'] == bookId:
-        targetBook = book2
-
-    context = {'book': targetBook}
-    return render(request, 'bookmodule/show.html', context)
+# عرض صفحة "من نحن"
+def aboutus(request):
+    return render(request, "bookmodule/aboutus.html")
