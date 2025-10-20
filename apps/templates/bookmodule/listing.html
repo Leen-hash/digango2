@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+<style>
+.feature-container {
+    width: 80%;
+    margin: 40px auto;
+    background-color: white; /* الخلفية العامة بيضاء */
+    padding: 0 40px;
+    border-radius: 10px;
+}
+
+/* العنوان: خلفية خضراء، النص بنفسجي */
+.feature-container h1 {
+    background-color: #2f8d46; /* أخضر غامق */
+    color: #8000ff; /* بنفسجي جميل */
+    padding: 15px 0;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    border-radius: 0;
+    width: 100%;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<div class="feature-container">
+    <h1>The Best Features of the Internet</h1>
+    <ul>
+        <li>You can meet new people from countries around the world.</li>
+        <li>You have access to new media as it becomes public:
+            <ul>
+                <li>New games</li>
+                <li>New applications
+                    <ol>
+                        <li>For business</li>
+                        <li>For pleasure</li>
+                    </ol>
+                </li>
+                <li>Around the clock news</li>
+                <li>Search engines</li>
+                <li>Shopping</li>
+                <li>Programming
+                    <ol>
+                        <li>XML</li>
+                        <li>Java</li>
+                        <li>HTML5</li>
+                        <li>JavaScript</li>
+                        <li>New languages</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Links</li>
+        <li>Keeping in touch with old friends</li>
+        <li>It’s the technology of the future!</li>
+    </ul>
+</div>
+{% endblock %}
+
+
+
+
+
+

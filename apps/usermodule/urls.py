@@ -1,5 +1,9 @@
 from django.urls import path
 
+from django.contrib import admin
+from django.urls import path, include
+
 urlpatterns = [
-    # حالياً فاضي، لاحقاً تضيف فيه روابط خاصة بالمستخدم
+    path('admin/', admin.site.urls),
+    path('books/', include('apps.bookmodule.urls')),
 ]
